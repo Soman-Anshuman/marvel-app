@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import Characters from './characters/Characters';
 import Comics from './comics/Comics';
-import Login from './components/login';
+import Login from './components/Login';
 
 
 
