@@ -1,0 +1,143 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+    position: relative;
+    gap: 0.5rem;
+    font-family: 'Courier New', Courier, monospace;
+    /* background-color: aqua; */
+}
+.background{
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    object-fit: cover;
+    top: 0;
+    z-index: -1;
+    opacity: 0.1;
+}
+a:link, a:visited{
+    color: slateblue;
+}
+a:hover{
+    color: red;
+}
+a:active{
+    color: green;
+}
+
+.chng-sxn-btn{
+    cursor: pointer;
+    transform: translateX(1rem) scale(1.1);
+    /* background-color: blue; */
+    /* align-self: center; */
+}
+.login-btn{
+    position: absolute;
+    transform: translate(1rem, 0.2rem) scale(0.7);
+}
+.search-box{
+    transform: scale(1.3);
+    padding: 0.2rem;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-right: 2rem;
+}
+
+
+.hero{
+    margin: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    /* align-items:baseline; */
+    /* background-color: red; */
+    max-width: 1120px;
+}
+
+.card{
+    /* margin: 10px; */
+    padding: 10px;
+    width: 300px;
+    min-height: 300px;
+    border: 2px solid black;
+    border-radius: 20px;
+    margin: 20px 30px;
+    background-color: rgba(169, 169, 169, 0.4);
+    box-shadow: 5px 5px 10px gray;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 5px;
+    position: relative;
+}
+.card img{
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+    position: relative;
+}
+.read-more{
+    cursor: pointer;
+    color: blue;
+}
+.read-more:hover{
+    color: hotpink;
+}
+.close-btn{
+    border: 2px solid black;
+    padding: 4px 10px 4px;
+    border-radius: 100%;
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    color: black;
+    background-color: yellow;
+}
+.close-btn:hover{
+    cursor: pointer;
+    color: whitesmoke;
+    background-color: black;
+}
+.card-cover{
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.card-cover button{
+    padding: 5px;
+    color: white;
+    background-color: blue;
+}
+.card-cover button:hover{
+    cursor: pointer;
+    color: black;
+    background-color: aqua;
+}
+
+.login-container{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.login-form{
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 1rem;
+}
