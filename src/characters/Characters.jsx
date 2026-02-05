@@ -4,9 +4,10 @@ import bgImage from "../assets/marvel-characters.jpg";
 import Loading from "../assets/loading";
 import { Link } from "react-router-dom";
 import useApiCall from "../components/useApiCall";
-import { generateHash, public_key } from "../assets/config";
+import { generateHash } from "../assets/config";
 
 function Characters() {
+  const public_key = import.meta.env.PUBLIC_KEY;
   const nameRef = useRef(null);
   const [characters, setCharacters] = useState(null);
 
@@ -40,47 +41,45 @@ function Characters() {
     setCharacters(allData?.data?.results);
   }, [allData]);
 
-  console.log(characters); //array
+  // console.log(characters); //array
 
   return (
-    <>
-      <div className="container">
-        <img src={bgImage} className="background" alt="" />
+    <div className="container">
+      <img src={bgImage} className="background" alt="" />
 
-        <h1>
-          Know your Marvel <span style={{ color: "red" }}>character</span>!!!
-          <Link to="/comics">
-            <button className="chng-sxn-btn">Go to Comics section</button>
-          </Link>
-          {/* <a href="/login" className='login-btn'>Login</a> */}
-        </h1>
-        <form>
-          <input
-            className="search-box"
-            type="text"
-            placeholder="Enter your character..."
-            // onChange={handleName}
-            ref={nameRef}
+      <h1>
+        Know your Marvel <span style={{ color: "red" }}>character</span>!!!
+        <Link to="/comics">
+          <button className="chng-sxn-btn">Go to Comics section</button>
+        </Link>
+        {/* <a href="/login" className='login-btn'>Login</a> */}
+      </h1>
+      <form>
+        <input
+          className="search-box"
+          type="text"
+          placeholder="Enter your character..."
+          // onChange={handleName}
+          ref={nameRef}
+        />
+        <button type="submit" onClick={handleSubmit}>
+          Submit
+        </button>
+      </form>
+
+      {loader && <Loading />}
+
+      <div className="hero">
+        {characters?.map((element) => (
+          <Card
+            key={element.id}
+            props={element}
+            type="characters"
+            removeCard={removeCard}
           />
-          <button type="submit" onClick={handleSubmit}>
-            Submit
-          </button>
-        </form>
-
-        {loader && <Loading />}
-
-        <div className="hero">
-          {characters?.map((element) => (
-            <Card
-              key={element.id}
-              props={element}
-              type="characters"
-              removeCard={removeCard}
-            />
-          ))}
-        </div>
+        ))}
       </div>
-    </>
+    </div>
   );
 }
 
